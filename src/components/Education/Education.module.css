@@ -1,0 +1,50 @@
+.container {
+    margin-bottom: 8rem;
+    background-color: #f7f7f7;
+    padding: 2rem;
+}
+
+.container .card {
+    margin: 4rem;
+    padding: 1%;
+    flex-direction: column;
+    background-color: white;
+    width: 40%;
+    border-radius: 0.5rem;
+    max-width: 500px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.collegeNameContainer {
+    width: 25%;
+    max-width: 250px;
+    background-color: #3662ec4D;
+
+    text-align: center;
+    border-radius: 10px;
+}
+
+.collegeNameTitle {
+    color: grey;
+    font-size: 0.8rem;
+}
+
+.educationDetails {
+    margin: auto;
+    padding: 0.25rem;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    background-color: #fafafa;
+}

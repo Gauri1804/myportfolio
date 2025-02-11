@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: "#e6e6e6";
+    margin-bottom: 8rem;
+}
+
+.img {
+    width: 700px;
+    height: 600px;
+}
+
+.getButton {
+    height: 40px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.getButton:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.viewButton {
+    height: 40px;
+    width: 120px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+
+
+
+.btnContainer {
+    margin: 10px;
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
