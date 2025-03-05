@@ -2,9 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1.5rem;
+    padding: 1.5rem;
     height: 1rem;
-
+    background-color: white;
+    overflow-x: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
 }
 
 .linkContainer {
@@ -13,4 +15,37 @@
     gap: 2rem;
     align-items: center;
 
+}
+
+
+
+.menuIcon {
+    height: 45px;
+    width: 45px;
+}
+
+.hamMenu {
+    display: none;
+}
+
+@media screen and (max-width:800px) {
+    .hamMenu {
+        display: inline-block;
+    }
+
+    .linkContainer {
+        display: none;
+    }
+
+    .mobileContainer {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 3.2rem;
+        left: 0;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+    }
 }

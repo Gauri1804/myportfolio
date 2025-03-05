@@ -1,21 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Header.module.css'
+import { IoMenu } from "react-icons/io5";
 const Header = () => {
+    const [showMenu, setShowMenu] = useState(false);
     return (
-        <div className={styles.container}>
+        <header className={styles.container}>
             <section>
                 <h4>GS</h4>
             </section>
 
-            <section className={styles.linkContainer}>
+            <nav className={showMenu ? styles.mobileContainer : styles.linkContainer}>
                 <p>Home</p>
                 <p>About </p>
                 <p>Projects </p>
                 <p>Skills </p>
                 <p>Experience </p>
                 <p>Contact </p>
-            </section>
-        </div>
+            </nav>
+            <div className={styles.hamMenu} onClick={() => setShowMenu(!showMenu)}>
+                <IoMenu className={styles.menuIcon} />
+            </div>
+        </header>
     )
 }
 

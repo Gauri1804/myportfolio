@@ -1,16 +1,30 @@
 .container {
     display: flex;
     flex-direction: row-reverse;
-    margin: 2rem;
+    padding: 2rem;
     justify-content: space-between;
     align-items: center;
     background-color: "#e6e6e6";
     margin-bottom: 8rem;
+    background-color: #f7f7f7;
+    overflow-x: hidden;
+
+}
+
+.subContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
 }
 
 .img {
-    width: 700px;
-    height: 600px;
+    width: min(70vw, 50%);
+    height: min(70vw, 50%);
+    border-radius: 10px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .getButton {
@@ -43,4 +57,18 @@
     display: flex;
     justify-content: left;
     gap: 20px;
+}
+
+
+@media screen and (max-width:800px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .subContainer {
+        align-items: center;
+        text-align: center;
+    }
 }

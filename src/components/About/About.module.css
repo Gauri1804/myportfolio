@@ -1,16 +1,16 @@
 .container {
     display: flex;
     flex-direction: row;
-    gap: 8rem;
     align-items: center;
-    margin: 5rem;
+    margin: 2rem;
     margin-bottom: 8rem;
+    overflow: hidden;
+    text-align: center;
 }
 
 .sectionOneCard {
     background-color: #f7f7f7;
     text-align: center;
-
     height: 140px;
     width: 200px;
     padding: 1rem;
@@ -19,28 +19,46 @@
 
 }
 
+.subContainer p {
+    margin-inline: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 0rem;
+}
+
 .iconCard {
     display: flex;
-    row-gap: 30px;
+    gap: 50px;
+
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.gridContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    width: 500px;
-    /* Adjust as needed */
-    height: 300px;
-    /* Adjust as needed */
-
+.sectionOneCardText {
+    font-size: 0.8rem;
 }
 
-.gridItem {
-    background-color: #f7f7f7;
-    padding: 20px 0px 20px 20px;
-    width: 230px;
-    border-radius: 5px;
+@media screen and (max-width:800px) {
+
+    .container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .subContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .subContainer p {
+        margin-inline: 1rem;
+    }
+
+    .iconCard {
+        flex-direction: column;
+    }
+
 }

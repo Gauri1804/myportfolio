@@ -76,3 +76,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+/* 
+h1 {
+  background-color: aqua;
+  font-size: clamp(1rem, calc(1vw, 1rem), 5rem);
+} */

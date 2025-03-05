@@ -4,11 +4,11 @@ function Home() {
     return (
         <div className={styles.container}>
 
-            <section>
-                <img className={styles.img} src='https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' />
-            </section>
 
-            <section>
+            <img className={styles.img} src='https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Images%2Flogoport.png?alt=media&token=fa7057bd-4bfd-4b26-b528-d507de34db43' />
+
+
+            <section className={styles.subContainer}>
                 <h1>Hi, I'm Gaurav Singh</h1>
                 <h3>MCA Student & Aspiring Software Developer</h3>
                 <p>Currently pursuing MCA with a passion for web development and modern<br /> technologies. Eager to contribute and learn in a professional environment.</p>

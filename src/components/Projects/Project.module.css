@@ -3,6 +3,7 @@
     margin: 20px auto;
     text-align: center;
     margin-bottom: 8rem;
+    overflow-x: hidden;
 }
 
 .container h1 {
@@ -13,7 +14,7 @@
 .container .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 50px;
+    gap: 70px;
 }
 
 
@@ -126,4 +127,17 @@
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+@media screen and (max-width:800px) {
+    .grid {
+        padding: 2rem;
+    }
+}
+
+
+@media screen and (max-width:480px) {
+    .grid {
+        padding: 2rem;
+    }
 }

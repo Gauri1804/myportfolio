@@ -1,7 +1,16 @@
 .container {
     margin-bottom: 8rem;
     background-color: #f7f7f7;
-    padding: 2rem;
+    padding: 3rem;
+    overflow-x: hidden;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .container .card {
@@ -9,7 +18,7 @@
     padding: 1%;
     flex-direction: column;
     background-color: white;
-    width: 40%;
+    width: 100%;
     border-radius: 0.5rem;
     max-width: 500px;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
@@ -20,6 +29,7 @@
     transform: scale(1.05);
 }
 
+
 .iconContainer {
     display: flex;
     justify-content: space-between;
@@ -27,12 +37,12 @@
 }
 
 .collegeNameContainer {
-    width: 25%;
+    width: 45%;
     max-width: 250px;
-    background-color: #3662ec4D;
 
-    text-align: center;
-    border-radius: 10px;
+
+    text-align: left;
+
 }
 
 .collegeNameTitle {
@@ -47,4 +57,85 @@
     max-width: 500px;
     border-radius: 8px;
     background-color: #fafafa;
+}
+
+.icon {
+    width: 15%;
+    max-width: 100px;
+}
+
+.dateItems {
+    font-size: 1rem;
+    color: gray;
+}
+
+@media screen and (max-width:600px) {
+    .container .card {
+        padding: 2rem;
+        margin-block: 2rem;
+    }
+
+    .container h1 {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .container h2 {
+        font-size: 1rem;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .card h4 {
+        font-size: 0.8rem;
+        width: 50vw;
+    }
+
+    .educationDetails li {
+
+        font-size: 0.7rem;
+    }
+
+    .dateItems {
+        font-size: 0.8rem;
+    }
+
+}
+
+
+@media screen and (max-width:400px) {
+    .card h3 {
+        font-size: 0.7rem;
+    }
+
+    .container h1 {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .container h2 {
+        font-size: 1rem;
+    }
+
+    .card h4 {
+        font-size: 0.5rem;
+        width: 50vw;
+    }
+
+    .dateItems {
+        font-size: 0.5rem;
+    }
+
+    .educationDetails li {
+
+        font-size: 0.5rem;
+    }
+
+    .container .card {
+        padding: 2rem;
+        margin-block: 3rem;
+        margin-inline: 0;
+    }
 }
