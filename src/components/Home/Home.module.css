@@ -72,3 +72,11 @@
         text-align: center;
     }
 }
+
+
+.blurred {
+    filter: blur(3px);
+    /* Apply a blur effect */
+    transition: filter 0.3s ease;
+    /* Smooth transition for blur */
+}

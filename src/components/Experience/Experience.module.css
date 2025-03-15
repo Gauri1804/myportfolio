@@ -248,6 +248,35 @@
         padding-inline: 3rem;
     }
 
+    .contactContainer {
+        margin: 1rem;
+    }
+
+    .contactSubContainer {
+        flex-direction: column;
+    }
+
+    .supervisorContainer {
+        margin-inline: 0px;
+        gap: 5px;
+    }
+
+    .companyContactDetailsContainer {
+        justify-content: center;
+    }
+
+    .titleContainer {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: medium;
+    }
+
+    .companyName {
+        font-size: small;
+    }
+
 }
 
 
@@ -306,5 +335,7 @@
         margin: 1rem;
     }
 
-
+    .titleContainer {
+        text-align: center;
+    }
 }

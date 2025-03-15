@@ -19,22 +19,23 @@ function Contact() {
             <p className={styles.containerText}>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
             <div className={styles.contactForm}>
                 <form className={styles.form}>
-                    <label className={styles.formText} > Name:
+                    <label className={styles.inputContainer} >
                         <input className={styles.formInput} id='name' type='text' value={name} onChange={(e) => setName(e.target.value)} required />
+                        <span>Name</span>
                     </label>
 
 
-                    <label className={styles.formText}>
-                        Email:
+                    <label className={styles.inputContainer}>
                         <input className={styles.formInput} id='email' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                        <span >Email</span>
                     </label>
-                    <label className={styles.formText}>
-                        Subject:
+                    <label className={styles.inputContainer}>
                         <input className={styles.formInput} id='subject' type='text' value={subject} onChange={(e) => setSubject(e.target.value)} required />
+                        <span >Subject</span>
                     </label>
-                    <label className={styles.formText}>
-                        Message:
-                        <textarea rows={5} cols={50} className={styles.formInputBig} id='message' value={message} onChange={(e) => setMessage(e.target.value)} required />
+                    <label className={styles.inputContainer}>
+                        <textarea rows={5} cols={50} className={styles.formInput} id='message' value={message} onChange={(e) => setMessage(e.target.value)} required />
+                        <span > Message</span>
                     </label>
 
                     <input type='submit' className={styles.formInputSubmit} />

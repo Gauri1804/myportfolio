@@ -5,8 +5,9 @@
     padding: 1.5rem;
     height: 1rem;
     background-color: white;
-    overflow-x: hidden;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+    overflow: hidden;
+    box-shadow: #00000040 0px 14px 28px;
+    z-index: 9999;
 }
 
 .linkContainer {
@@ -26,7 +27,24 @@
 
 .hamMenu {
     display: none;
+
 }
+
+.mobileContainer {
+    z-index: 9999;
+    position: absolute;
+    top: 3.2rem;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+    transition: left 0.4s ease-in-out;
+    /* Updated to 'left' for transition */
+}
+
 
 @media screen and (max-width:800px) {
     .hamMenu {
@@ -39,13 +57,9 @@
 
     .mobileContainer {
         display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 3.2rem;
-        left: 0;
-        align-items: center;
-        background-color: white;
-        width: 100%;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+    }
+
+    .mobileContainer .show {
+        left: 25;
     }
 }
