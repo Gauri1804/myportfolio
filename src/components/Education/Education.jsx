@@ -31,9 +31,9 @@ const data = [
 ]
 
 
-function Education() {
+function Education({ blur }) {
     return (
-        <div className={styles.container}>
+        <div id='education' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
             <h2 style={{ textAlign: 'center' }}>Education</h2>
             <h1 style={{ textAlign: 'center' }}>Academic Background</h1>
 

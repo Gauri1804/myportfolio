@@ -2,47 +2,32 @@ import React from 'react'
 import styles from './Project.module.css'
 import { FaGithubSquare } from "react-icons/fa";
 import { GoProjectSymlink } from "react-icons/go";
-function Project() {
+function Project({ blur }) {
 
 
     const projectDetails = [
         {
-            p_name: "Web project",
-            p__s_description: "this is my first project",
-            p__l_description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia fugit sequi ab optio excepturi nesciunt, reiciendis quia dolorem eligendi suscipit, est cum fugiat odio! Accusantium inventore dolore corporis nemo.",
-            p_img: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            p_name: "Tourism Website for Uttarakhand",
+            p__s_description: "This project is related to the Smart India Hackathon ",
+            p__l_description: "During my BCA, I developed a Smart India Hackathon project on Uttarakhand tourism, using AI, GPS, and React.js to enhance travel with smart itineraries, emergency alerts, and eco-tourism support. 🚀",
+            p_img: "https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2Fpro1.png?alt=media&token=99d50602-3973-4189-b4b1-ff6b6b527f37",
+            github: "https://github.com/Gauri1804/React",
+            demo: "https://gauri1804.github.io/React/"
         },
         {
-            p_name: "Android Project",
-            p__s_description: "this is my second project",
-            p__l_description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia fugit sequi ab optio excepturi nesciunt, reiciendis quia dolorem eligendi suscipit, est cum fugiat odio! Accusantium inventore dolore corporis nemo.",
-            p_img: "https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            p_name: "Student Portal For Collage",
+            p__s_description: "Student Portal for College – A Winter Live Project.",
+            p__l_description: "A Student Portal for college providing notes, previous year question papers, announcements, and resources, ensuring easy access to academic materials and essential information in one place. 📚✨",
+            p_img: "https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2Fpro2.png?alt=media&token=1e07c2e2-b8a0-4345-a28d-3ea5422edc1b",
+            github: "https://github.com/Gauri1804/React",
+            demo: "https://gauri1804.github.io/React/"
         },
 
-        {
-            p_name: "Ai Project",
-            p__s_description: "this is my third project",
-            p__l_description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia fugit sequi ab optio excepturi nesciunt, reiciendis quia dolorem eligendi suscipit, est cum fugiat odio! Accusantium inventore dolore corporis nemo.",
-            p_img: "https://images.pexels.com/photos/693859/pexels-photo-693859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
 
-        {
-            p_name: "ML Project",
-            p__s_description: "this is my fourth project",
-            p__l_description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia fugit sequi ab optio excepturi nesciunt, reiciendis quia dolorem eligendi suscipit, est cum fugiat odio! Accusantium inventore dolore corporis nemo.",
-            p_img: "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-
-        {
-            p_name: "NLP Project",
-            p__s_description: "this is my fifth project",
-            p__l_description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia fugit sequi ab optio excepturi nesciunt, reiciendis quia dolorem eligendi suscipit, est cum fugiat odio! Accusantium inventore dolore corporis nemo.",
-            p_img: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
     ]
 
     return (
-        <div className={styles.container}>
+        <div id='projects' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
 
             <h1>Featured Project</h1>
             <div className={styles.grid}>
@@ -60,9 +45,9 @@ function Project() {
                                     <p className={styles.description}>{data.p__s_description}</p>
                                 </div>
                                 <div className={styles.cardOverlay}>
-                                    <h3 class="card-title">{data.p_name}</h3>
+                                    <h3 className={styles.cardTitle}>{data.p_name}</h3>
 
-                                    <p class="card-description">{data.p__l_description}</p>
+                                    <p className={styles.cardDescription}>{data.p__l_description}</p>
                                     <br />
                                     <div className={styles.btnDiv}>
 

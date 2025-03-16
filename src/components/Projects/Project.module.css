@@ -1,3 +1,10 @@
+.blurred {
+    filter: blur(3px);
+    /* Apply a blur effect */
+    transition: filter 0.3s ease;
+    /* Smooth transition for blur */
+}
+
 .container {
     max-width: 1200px;
     margin: 20px auto;
@@ -50,7 +57,7 @@
 }
 
 .cardDescription {
-    color: #666;
+    color: #fff;
 }
 
 /* Overlay */
@@ -109,6 +116,7 @@
     transition: background-color 0.3s ease;
     font-weight: bold;
     font-size: 12px;
+    transition: 0.3s ease-in-out;
 }
 
 .buttonCode:hover {
@@ -139,5 +147,18 @@
 @media screen and (max-width:480px) {
     .grid {
         padding: 2rem;
+    }
+
+    .cardOverlay {
+        padding: 5px 5px 20px 5px;
+
+    }
+
+    .cardDescription {
+        font-size: small;
+    }
+
+    .cardTitle {
+        font-size: medium;
     }
 }

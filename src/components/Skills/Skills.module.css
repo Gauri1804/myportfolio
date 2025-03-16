@@ -1,52 +1,64 @@
-    .cardContainer {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
-        margin-bottom: 8rem;
-        overflow-x: hidden;
-    }
+.blurred {
+    filter: blur(3px);
+    /* Apply a blur effect */
+    transition: filter 0.3s ease;
+    /* Smooth transition for blur */
+}
 
-    .card {
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: left;
-        min-width: 250px;
-        width: 25%;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
+.cardContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 8rem;
+    overflow-x: hidden;
+}
 
-    .card:hover {
-        transform: scale(1.05);
-    }
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    min-width: 250px;
+    width: 25%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .cardList {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 10px;
-        list-style: none;
-        padding: 0;
+.card:hover {
+    transform: scale(1.05);
+}
+
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    list-style: none;
+
+    padding: 0;
 
 
-    }
+}
 
-    .cardListItems {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
+.cardListItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
 
-    .title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
+.icon {
+    margin-top: 8px;
+}
 
-    @media screen and (max-width:480px) {}
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:480px) {}

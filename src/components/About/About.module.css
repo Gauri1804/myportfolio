@@ -38,6 +38,14 @@
     font-size: 0.8rem;
 }
 
+
+.blurred {
+    filter: blur(3px);
+    /* Apply a blur effect */
+    transition: filter 0.3s ease;
+    /* Smooth transition for blur */
+}
+
 @media screen and (max-width:800px) {
 
     .container {

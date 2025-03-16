@@ -37,7 +37,7 @@ const skillData = [
         category: "Tools & Others",
         items: [
             { name: "Git", icon: <FaGitAlt color="#F05032" size={24} /> },  // Git (Orange-Red)
-            { name: "Docker", icon: <FaDocker color="#2496ED" size={24} /> }, // Docker (Blue)
+            { name: "React-Native", icon: <FaReact color="#2496ED" size={24} /> }, // Docker (Blue)
             { name: "Figma", icon: <SiFigma color="#F24E1E" size={24} /> }, // Figma (Red-Orange)
             { name: "CLI", icon: <HiCommandLine color="#808080" size={24} /> }, // CLI (Gray)
             { name: "REST API", icon: <MdOutlineApi color="#4DB6AC" size={24} /> }, // REST API (Teal)
@@ -48,13 +48,13 @@ const skillData = [
 
 ]
 
-const Skills = () => {
+const Skills = ({ blur }) => {
 
 
 
 
     return (
-        <>
+        <div id='skills' className={blur ? styles.blurred : ''}>
             <h2 style={{ textAlign: 'center' }} >Skills & Technologies</h2>
 
             <div className={styles.cardContainer}>
@@ -76,7 +76,7 @@ const Skills = () => {
 
 
             </div>
-        </>
+        </div>
     )
 }
 

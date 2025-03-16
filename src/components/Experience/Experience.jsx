@@ -92,10 +92,10 @@ const data = [
 
 
 
-function Experience() {
+function Experience({ blur }) {
     return (
         // main cointainer
-        <div className={styles.container}>
+        <div id='experience' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
             {/* title container */}
             <div className={styles.titleContainer}>
                 <h1 className={styles.title}>Professional Experience</h1>

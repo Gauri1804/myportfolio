@@ -8,17 +8,19 @@ import { FaGithub } from "react-icons/fa6";
 import { FaTwitterSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaWhatsappSquare } from "react-icons/fa";
-function Contact() {
+
+function Contact({ blur }) {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [subject, setSubject] = useState();
     const [message, setMessage] = useState();
     return (
-        <div className={styles.container}>
+        <div id='contact' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
             <h2 className={styles.containerTitle}>Get In Touch</h2>
             <p className={styles.containerText}>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
             <div className={styles.contactForm}>
                 <form className={styles.form}>
+                    <h3>Let's talk about something <span>great </span> together</h3>
                     <label className={styles.inputContainer} >
                         <input className={styles.formInput} id='name' type='text' value={name} onChange={(e) => setName(e.target.value)} required />
                         <span>Name</span>

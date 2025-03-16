@@ -3,9 +3,9 @@ import React from 'react'
 import { FaCode, FaLaptopCode, } from "react-icons/fa6";
 import { FaMobileAlt } from "react-icons/fa";
 import styles from './About.module.css'
-function About() {
+function About({ blur }) {
     return (
-        <>
+        <section id="about" className={blur ? styles.blurred : ''}>
             <h2 style={{ textAlign: 'center' }}>About Me</h2>
 
             <div className={styles.container}>
@@ -45,7 +45,7 @@ function About() {
 
 
             </div>
-        </>
+        </section>
 
     )
 }

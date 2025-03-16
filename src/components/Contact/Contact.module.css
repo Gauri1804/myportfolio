@@ -1,5 +1,11 @@
+.blurred {
+    filter: blur(3px);
+    /* Apply a blur effect */
+    transition: filter 0.3s ease;
+    /* Smooth transition for blur */
+}
+
 .container {
-    margin-bottom: 8rem;
     background-color: #f7f7f7f7;
     padding: 2rem;
     overflow-x: hidden;
@@ -31,6 +37,17 @@
     padding: 50px 60px 40px 50px;
     border-radius: 20px;
     position: relative;
+}
+
+.form h3 {
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+.form h3 span {
+    color: #1ab188;
 }
 
 .inputContainer {
