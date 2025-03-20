@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
 import styles from './Contact.module.css'
 import { FcAlarmClock } from "react-icons/fc";
 import { FaLocationDot } from "react-icons/fa6";
@@ -10,37 +12,70 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaWhatsappSquare } from "react-icons/fa";
 
 function Contact({ blur }) {
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [subject, setSubject] = useState();
-    const [message, setMessage] = useState();
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm('service_myz41c6', 'template_eyb5btb', form.current, {
+                publicKey: '0l-IjkKICJx8TdrB6',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                    toast("Thank You for contacting...");
+                    setName("");
+                    setEmail("");
+                    setSubject("");
+                    setMessage("");
+
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                    toast.error(error.text)
+                    setName("");
+                    setEmail("");
+                    setSubject("");
+                    setMessage("");
+                },
+            );
+    };
+
+
     return (
         <div id='contact' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
+            <ToastContainer />
             <h2 className={styles.containerTitle}>Get In Touch</h2>
             <p className={styles.containerText}>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
             <div className={styles.contactForm}>
-                <form className={styles.form}>
+                <form className={styles.form} ref={form} onSubmit={sendEmail}>
                     <h3>Let's talk about something <span>great </span> together</h3>
                     <label className={styles.inputContainer} >
-                        <input className={styles.formInput} id='name' type='text' value={name} onChange={(e) => setName(e.target.value)} required />
+                        <input className={styles.formInput} value={name} onChange={(e) => setName(e.target.value)} name='user_name' id='name' type='text' required />
                         <span>Name</span>
                     </label>
 
 
                     <label className={styles.inputContainer}>
-                        <input className={styles.formInput} id='email' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                        <input className={styles.formInput} value={email} onChange={(e) => setEmail(e.target.value)} name='user_email' id='email' type='email' required />
                         <span >Email</span>
                     </label>
                     <label className={styles.inputContainer}>
-                        <input className={styles.formInput} id='subject' type='text' value={subject} onChange={(e) => setSubject(e.target.value)} required />
+                        <input className={styles.formInput} value={subject} onChange={(e) => setSubject(e.target.value)} name='subject' id='subject' type='text' required />
                         <span >Subject</span>
                     </label>
                     <label className={styles.inputContainer}>
-                        <textarea rows={5} cols={50} className={styles.formInput} id='message' value={message} onChange={(e) => setMessage(e.target.value)} required />
+                        <textarea rows={5} cols={50} value={message} onChange={(e) => setMessage(e.target.value)} name='message' className={styles.formInput} id='message' required />
                         <span > Message</span>
                     </label>
 
-                    <input type='submit' className={styles.formInputSubmit} />
+                    <input type='submit' value="Send" className={styles.formInputSubmit} />
 
                 </form>
 

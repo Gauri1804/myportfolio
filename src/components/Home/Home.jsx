@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Home.module.css'
 import { Typewriter } from 'react-simple-typewriter'
+import { Link } from 'react-scroll'
 function Home({ blur }) {
     return (
         <div id='home' className={`${styles.container}  ${blur ? styles.blurred : ' '}`}>
@@ -22,7 +23,7 @@ function Home({ blur }) {
                 <p>Currently pursuing MCA with a passion for web development and modern<br /> technologies. Eager to contribute and learn in a professional environment.</p>
                 <div className={styles.btnContainer}>
                     <button className={styles.getButton}>Get Resume</button>
-                    <button className={styles.viewButton}>View Projects</button>
+                    <Link to='contact' offset={-80} smooth={true} spy={true} duration={500}><button className={styles.viewButton} >Contact Me</button> </Link>
                 </div>
             </section>
         </div>
