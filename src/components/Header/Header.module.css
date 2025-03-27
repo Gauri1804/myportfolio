@@ -104,9 +104,15 @@ a:hover {
         /* Updated to 'left' for transition */
     }
 
+    .theme {
+        display: none !important;
+    }
 
     .hamMenu {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: center;
     }
 
     .linkContainer {

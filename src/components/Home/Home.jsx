@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Home.module.css'
 import { Typewriter } from 'react-simple-typewriter'
 import { Link } from 'react-scroll'
+import { ThemeContext } from '../../App'
+import { colors } from '../../constraint/colors'
 function Home({ blur }) {
+
+    //create consumer
+    const { theme } = useContext(ThemeContext);
+
     return (
-        <div id='home' className={`${styles.container}  ${blur ? styles.blurred : ' '}`}>
+        <div id='home' className={`${styles.container}  ${blur ? styles.blurred : ' '}`}
+            style={
+                theme === "light"
+                    ?
+                    {
+                        backgroundColor: colors.backgroundSemi,
+                        color: colors.color
+                    }
+                    :
+                    {
+                        backgroundColor: colors.backgroundDark,
+                        color: colors.colorDark
+                    }
+            }
+        >
 
 
             <img className={styles.img} src='https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Images%2Flogoport.png?alt=media&token=fa7057bd-4bfd-4b26-b528-d507de34db43' />

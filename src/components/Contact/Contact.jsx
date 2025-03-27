@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import styles from './Contact.module.css'
@@ -10,16 +10,19 @@ import { FaGithub } from "react-icons/fa6";
 import { FaTwitterSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaWhatsappSquare } from "react-icons/fa";
-
+import { DotLoader, HashLoader } from 'react-spinners';
+import { ThemeContext } from '../../App';
+import { colors } from '../../constraint/colors';
 function Contact({ blur }) {
-
+    const [isLoading, setIsLoading] = useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const form = useRef();
-
+    const { theme } = useContext(ThemeContext)
     const sendEmail = (e) => {
+        setIsLoading(true)
         e.preventDefault();
 
         emailjs
@@ -30,30 +33,44 @@ function Contact({ blur }) {
                 () => {
                     console.log('SUCCESS!');
                     toast("Thank You for contacting...");
-                    setName("");
-                    setEmail("");
-                    setSubject("");
-                    setMessage("");
+                    setTimeout(() => {
+                        setName("");
+                        setEmail("");
+                        setSubject("");
+                        setMessage("");
+                        setIsLoading(false)
+                    }, 3000);
 
                 },
                 (error) => {
-                    console.log('FAILED...', error.text);
-                    toast.error(error.text)
-                    setName("");
-                    setEmail("");
-                    setSubject("");
-                    setMessage("");
+                    console.log('FAILED...', error);
+                    toast.error("something went to wrong...")
+                    setTimeout(() => {
+                        setName("");
+                        setEmail("");
+                        setSubject("");
+                        setMessage("");
+                        setIsLoading(false)
+                    }, 2000);
+
                 },
             );
     };
 
 
     return (
-        <div id='contact' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
+        <div style={theme === "light" ? {
+            color: colors.color,
+            backgroundColor: colors.backgroundSemi
+        } : {
+            color: colors.colorDark,
+            backgroundColor: colors.backgroundHeader
+        }} id='contact' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
             <ToastContainer />
             <h2 className={styles.containerTitle}>Get In Touch</h2>
             <p className={styles.containerText}>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
             <div className={styles.contactForm}>
+
                 <form className={styles.form} ref={form} onSubmit={sendEmail}>
                     <h3>Let's talk about something <span>great </span> together</h3>
                     <label className={styles.inputContainer} >
@@ -74,15 +91,19 @@ function Contact({ blur }) {
                         <textarea rows={5} cols={50} value={message} onChange={(e) => setMessage(e.target.value)} name='message' className={styles.formInput} id='message' required />
                         <span > Message</span>
                     </label>
+                    <div style={{ display: isLoading ? 'flex' : 'none', justifyContent: 'center', alignItems: 'center' }}>
+                        <HashLoader loading={isLoading} color="#18732b" />
+                    </div>
 
-                    <input type='submit' value="Send" className={styles.formInputSubmit} />
+                    <input type='submit' value={isLoading ? "Loading..." : "Send"} className={styles.formInputSubmit} />
 
                 </form>
 
 
                 <div className={styles.contactContainer}>
-                    <div className={styles.contactInfoCard}>
-                        <h4>Contact Information</h4>
+                    <div
+                        className={styles.contactInfoCard}>
+                        <h4 >Contact Information</h4>
                         <div className={styles.iconContainer}>
                             <span className={styles.iconContainerSpan}><MdEmail /> gauravsingh180477@gmail.com</span>
                             <span className={styles.iconContainerSpan}><FcCellPhone /> +91 6397846708</span>

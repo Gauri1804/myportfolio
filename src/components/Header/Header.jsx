@@ -41,21 +41,60 @@
 // export default Header;
 
 
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './Header.module.css';
 import { IoClose } from "react-icons/io5";
 import { MdOutlineMenuOpen } from "react-icons/md";
-import { Element, Link } from 'react-scroll';
-import Home from '../Home/Home';
+import { Link } from 'react-scroll';
+import { GiSun } from "react-icons/gi";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { ThemeContext } from '../../App';
+import { colors } from '../../constraint/colors';
 const Header = ({ showMenu, handleMenuToggle }) => {
+    //create consumer 
+    const { theme, setTheme } = useContext(ThemeContext)
+    //to theme mode button hide from hamburger menu 
+    const [showThemeButton, setShowThemeButton] = useState(window.innerWidth > 800);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setShowThemeButton(window.innerWidth > 800);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    //theme toggle function
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light')
+    }
 
     return (
-        <header className={styles.container}>
+        <header className={styles.container} style=
+            {
+                theme === "light"
+                    ?
+                    {
+                        backgroundColor: colors.background,
+                        color: colors.color
+                    }
+                    :
+                    {
+                        backgroundColor: colors.backgroundHeader,
+                        color: colors.colorDark
+                    }
+            }>
             <section>
                 <h4>GS</h4>
             </section>
 
-            <nav className={`${showMenu ? styles.mobileContainer || styles.show : styles.linkContainer} `}>
+            <nav style={theme === "light" ? {
+                color: colors.color,
+                backgroundColor: colors.backgroundSemi
+            } : {
+                color: colors.colorDark,
+                backgroundColor: colors.backgroundHeader
+            }} className={`${showMenu ? styles.mobileContainer || styles.show : styles.linkContainer} `}>
                 <a>
                     <Link to="home" spy={true} smooth={true} offset={0} duration={500} onClick={showMenu ? handleMenuToggle : null}>Home</Link>
                 </a>
@@ -78,14 +117,23 @@ const Header = ({ showMenu, handleMenuToggle }) => {
                     <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} onClick={showMenu ? handleMenuToggle : null}>Contact</Link>
                 </a>
 
+                {showThemeButton && (
+                    <a className="theme" onClick={toggleTheme}>
+                        {theme === "light" ? <GiSun size={25} color="#FFA500" /> : <BsFillMoonStarsFill color="#A9A9A9" size={25} />}
+                    </a>
+                )}
             </nav>
 
-            <div className={styles.hamMenu} onClick={handleMenuToggle}>
+            <div
+
+                className={styles.hamMenu} onClick={handleMenuToggle}>
+                <a onClick={toggleTheme}>{theme === "light" ? <GiSun size={25} color="#FFA500" /> : <BsFillMoonStarsFill color="#A9A9A9" size={25} />}</a>
                 {showMenu ? (
                     <IoClose className={styles.menuIcon} />
                 ) : (
                     <MdOutlineMenuOpen className={styles.menuIcon} />
                 )}
+
             </div>
         </header >
     );

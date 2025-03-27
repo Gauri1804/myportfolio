@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Education.module.css'
 import { FaGraduationCap } from "react-icons/fa";
+import { ThemeContext } from '../../App';
+import { colors } from '../../constraint/colors';
 
 const data = [
     {
@@ -32,15 +34,28 @@ const data = [
 
 
 function Education({ blur }) {
+    const { theme } = useContext(ThemeContext);
     return (
-        <div id='education' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
+        <div id='education' style={theme === "light" ? {
+            color: colors.color,
+            backgroundColor: colors.backgroundSemi
+        } : {
+            color: colors.colorDark,
+            backgroundColor: colors.backgroundHeader
+        }} className={`${styles.container} ${blur ? styles.blurred : ''} `}>
             <h2 style={{ textAlign: 'center' }}>Education</h2>
             <h1 style={{ textAlign: 'center' }}>Academic Background</h1>
 
             <div className={styles.cardContainer}>
                 {data.map((section, index) => (
 
-                    <div key={index} className={styles.card}>
+                    <div style={theme === "light" ? {
+                        color: colors.color,
+                        backgroundColor: colors.backgroundSemi
+                    } : {
+                        color: colors.colorDark,
+                        backgroundColor: colors.backgroundDark
+                    }} key={index} className={styles.card}>
 
                         {/* icon and year container*/}
                         <div className={styles.iconContainer}>
@@ -64,7 +79,13 @@ function Education({ blur }) {
 
                         {/* Details Section */}
 
-                        <div className={styles.educationDetails}>
+                        <div style={theme === "light" ? {
+                            color: colors.color,
+                            backgroundColor: colors.backgroundSemi
+                        } : {
+                            color: colors.colorDark,
+                            backgroundColor: colors.backgroundHeader
+                        }} className={styles.educationDetails}>
                             <ul >
                                 {section.courseDetails.map((items, idx) => (
 

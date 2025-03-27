@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Project.module.css'
 import { FaGithubSquare } from "react-icons/fa";
 import { GoProjectSymlink } from "react-icons/go";
+import { ThemeContext } from '../../App';
+import { colors } from '../../constraint/colors';
 function Project({ blur }) {
 
 
@@ -26,17 +28,27 @@ function Project({ blur }) {
 
     ]
 
+    const { theme } = useContext(ThemeContext)
+
     return (
         <div id='projects' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
 
-            <h1>Featured Project</h1>
+            <h2 style={theme === "light" ? { color: colors.color } : { color: colors.colorDark }}>Featured Project</h2>
             <div className={styles.grid}>
 
                 {
                     projectDetails.map((data, index) => {
                         return (
 
-                            <div id={index} className={styles.card}>
+                            <div style={theme === "light" ?
+                                {
+                                    backgroundOrigin: colors.background,
+                                    color: colors.color
+
+                                } : {
+                                    backgroundColor: colors.backgroundHeader,
+                                    color: colors.colorDark
+                                }} id={index} className={styles.card}>
                                 <div className={styles.cardImage}>
                                     <img src={data.p_img} alt='IMG' />
                                 </div>
@@ -44,7 +56,15 @@ function Project({ blur }) {
                                     <h3 className={styles.cardTitle}>{data.p_name}</h3>
                                     <p className={styles.description}>{data.p__s_description}</p>
                                 </div>
-                                <div className={styles.cardOverlay}>
+                                <div style={theme === "light" ?
+                                    {
+                                        backgroundOrigin: colors.backgroundDark,
+                                        color: colors.color
+
+                                    } : {
+                                        backgroundColor: colors.backgroundHeader,
+                                        color: colors.colorDark
+                                    }} className={styles.cardOverlay}>
                                     <h3 className={styles.cardTitle}>{data.p_name}</h3>
 
                                     <p className={styles.cardDescription}>{data.p__l_description}</p>

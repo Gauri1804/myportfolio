@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaNodeJs, FaFire, FaGitAlt, FaDocker } from "react-icons/fa";
 import { SiMongodb, SiMysql, SiFigma, SiExpress } from "react-icons/si";
 import { MdOutlineApi, MdDevices } from "react-icons/md";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { HiCommandLine } from "react-icons/hi2";
 import styles from './Skills.module.css'
+import { ThemeContext } from '../../App';
+import { colors } from '../../constraint/colors';
 
 
 const skillData = [
@@ -51,17 +53,29 @@ const skillData = [
 const Skills = ({ blur }) => {
 
 
-
+    const { theme } = useContext(ThemeContext)
 
     return (
         <div id='skills' className={blur ? styles.blurred : ''}>
-            <h2 style={{ textAlign: 'center' }} >Skills & Technologies</h2>
+            <h2 style={theme === "light" ? {
+                color: colors.color,
+                textAlign: 'center'
+            } : {
+                color: colors.colorDark,
+                textAlign: 'center'
+            }} >Skills & Technologies</h2>
 
             <div className={styles.cardContainer}>
 
                 {skillData.map((section, index) => (
 
-                    <div className={styles.card} key={index}>
+                    <div style={theme === "light" ? {
+                        backgroundColor: colors.background,
+                        color: colors.color
+                    } : {
+                        color: colors.colorDark,
+                        backgroundColor: colors.backgroundHeader
+                    }} className={styles.card} key={index}>
                         <h2 className={styles.title}>{section.category}</h2>
                         <ul className={styles.cardList}>
                             {section.items.map((item, idx) => (

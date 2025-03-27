@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Experience.module.css'
 import { IoLocationSharp } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";
@@ -11,6 +11,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { FaToolbox } from "react-icons/fa6";
+import { ThemeContext } from '../../App';
+import { colors } from '../../constraint/colors';
 const data = [
     {
         companyName: "SSJ IT Solutions",
@@ -93,20 +95,47 @@ const data = [
 
 
 function Experience({ blur }) {
+    const { theme } = useContext(ThemeContext)
     return (
         // main cointainer
-        <div id='experience' className={`${styles.container} ${blur ? styles.blurred : ''} `}>
+        <div id='experience' className={`${styles.container} ${blur ? styles.blurred : ''} `} style={theme === "light" ? {
+            color: colors.color,
+            backgroundColor: colors.backgroundSemi
+        } : {
+            color: colors.colorDark,
+            backgroundColor: colors.backgroundHeader
+        }}>
             {/* title container */}
-            <div className={styles.titleContainer}>
-                <h1 className={styles.title}>Professional Experience</h1>
-                <p className={styles.companyName}>Internship Journey at SSJ IT Solutions</p>
+            <div style={theme === "light" ? {
+                color: colors.color,
+                backgroundColor: colors.backgroundSemi
+            } : {
+                color: colors.colorDark,
+                backgroundColor: colors.backgroundHeader
+            }} className={styles.titleContainer}>
+                <h1 style={theme === "light" ? {
+                    color: colors.color,
+                } : {
+                    color: colors.colorDark,
+                }} className={styles.title}>Professional Experience</h1>
+                <p style={theme === "light" ? {
+                    color: colors.color,
+                } : {
+                    color: colors.colorDark,
+                }} className={styles.companyName}>Internship Journey at SSJ IT Solutions</p>
             </div>
 
             {/* company Details Container */}
 
             {data.map((item, index) => (
                 <>
-                    <div key={index} className={styles.companyDetailsContainer}>
+                    <div style={theme === "light" ? {
+                        color: colors.color,
+                        backgroundColor: colors.background
+                    } : {
+                        color: colors.colorDark,
+                        backgroundColor: colors.backgroundHeader
+                    }} key={index} className={styles.companyDetailsContainer}>
                         {/* icon Container */}
 
                         <div className={styles.iconContainer}>
@@ -119,7 +148,13 @@ function Experience({ blur }) {
 
                         {/* role Overview container */}
 
-                        <div className={styles.roleContainer}>
+                        <div style={theme === "light" ? {
+                            color: colors.color,
+                            backgroundColor: colors.backgroundSemi
+                        } : {
+                            color: colors.colorDark,
+                            backgroundColor: colors.backgroundHeader
+                        }} className={styles.roleContainer}>
 
                             <h4 style={{ margin: 0 }} > Role Overview</h4>
                             {item.roleOverView.map((role, idx) => (
@@ -140,7 +175,14 @@ function Experience({ blur }) {
                     {/* project 1  */}
                     <div className={styles.projectContainer}>
                         {item.project.map((projects, i) => (
-                            <div key={i} className={styles.projectCard}>
+                            <div style={theme === "light" ? {
+                                color: colors.color,
+                                backgroundColor: colors.background
+                            } : {
+                                color: colors.colorDark,
+                                backgroundColor: colors.backgroundDark
+                            }} key={i} className={styles.projectCard}>
+
                                 <div className={styles.projectTDContainer}>
                                     <h3>{projects.projectTitle}</h3>
                                     <img style={{ width: 120, height: 60 }} src={item.companyIcon} alt={item.companyName} />
@@ -152,7 +194,13 @@ function Experience({ blur }) {
                                 ))}
 
                                 <h5>Key Achievements:</h5>
-                                <div className={styles.achievementsList}>
+                                <div style={theme === "light" ? {
+                                    color: colors.color,
+                                    backgroundColor: colors.backgroundSemi
+                                } : {
+                                    color: colors.colorDark,
+                                    backgroundColor: colors.backgroundHeader
+                                }} className={styles.achievementsList}>
                                     {projects.achievements.map((achievement, idx) => (
                                         <ul key={idx}>
                                             <li>{achievement.achievement}</li>
@@ -190,7 +238,13 @@ function Experience({ blur }) {
                         <div className={styles.skillCardContainer}>
                             {item.skills.map((skill, idx) => (
 
-                                <div className={styles.card}>
+                                <div style={theme === "light" ? {
+                                    color: colors.color,
+                                    backgroundColor: colors.backgroundSemi
+                                } : {
+                                    color: colors.colorDark,
+                                    backgroundColor: colors.backgroundHeader
+                                }} className={styles.card}>
                                     <span className={styles.skillIcon}>{skill.skillIcon}</span>
                                     <span className={styles.skillName}>{skill.skillName}</span>
                                     <span className={styles.skillLevel}>{skill.skillLevel}</span>
@@ -201,7 +255,13 @@ function Experience({ blur }) {
                         </div>
 
 
-                        <div className={styles.contactContainer}>
+                        <div style={theme === "light" ? {
+                            color: colors.color,
+                            backgroundColor: colors.backgroundSemi
+                        } : {
+                            color: colors.colorDark,
+                            backgroundColor: colors.backgroundDark
+                        }} className={styles.contactContainer}>
                             <h1>Contact Information</h1>
                             <div className={styles.contactSubContainer}>
                                 <div className={styles.companyContactDetailsContainer}>
