@@ -126,14 +126,15 @@ const Header = ({ showMenu, handleMenuToggle }) => {
 
             <div
 
-                className={styles.hamMenu} onClick={handleMenuToggle}>
+                className={styles.hamMenu} >
                 <a onClick={toggleTheme}>{theme === "light" ? <GiSun size={25} color="#FFA500" /> : <BsFillMoonStarsFill color="#A9A9A9" size={25} />}</a>
-                {showMenu ? (
-                    <IoClose className={styles.menuIcon} />
-                ) : (
-                    <MdOutlineMenuOpen className={styles.menuIcon} />
-                )}
-
+                <div onClick={handleMenuToggle}>
+                    {showMenu ? (
+                        <IoClose className={styles.menuIcon} />
+                    ) : (
+                        <MdOutlineMenuOpen className={styles.menuIcon} />
+                    )}
+                </div>
             </div>
         </header >
     );
