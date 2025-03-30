@@ -9,21 +9,31 @@ function Project({ blur }) {
 
     const projectDetails = [
         {
-            p_name: "Tourism Website for Uttarakhand",
-            p__s_description: "This project is related to the Smart India Hackathon ",
-            p__l_description: "During my BCA, I developed a Smart India Hackathon project on Uttarakhand tourism, using AI, GPS, and React.js to enhance travel with smart itineraries, emergency alerts, and eco-tourism support. 🚀",
-            p_img: "https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2Fpro1.png?alt=media&token=99d50602-3973-4189-b4b1-ff6b6b527f37",
-            github: "https://github.com/Gauri1804/React",
-            demo: "https://gauri1804.github.io/React/"
+            p_name: "Personal Portfolio website",
+            p__s_description: "✅ Dark Mode ✅ Form Handling   ✅Animations & Interactivity",
+            p__l_description: "A Personal Portfolio Website built in React is a modern, interactive web application that showcases an individual's skills, projects, experience, and contact details. It typically includes sections like About Me, Skills, Projects, Resume, and Contact.",
+
+
+            p_img: "https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2Fport.png?alt=media&token=2da374ac-cb11-4160-bdbd-a66fb9e312c8",
+            github: "https://github.com/Gauri1804/myportfolio",
+            demo: "https://myportfolio-gauri1804s-projects.vercel.app/"
         },
-        {
-            p_name: "Student Portal For Collage",
-            p__s_description: "Student Portal for College – A Winter Live Project.",
-            p__l_description: "A Student Portal for college providing notes, previous year question papers, announcements, and resources, ensuring easy access to academic materials and essential information in one place. 📚✨",
-            p_img: "https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2Fpro2.png?alt=media&token=1e07c2e2-b8a0-4345-a28d-3ea5422edc1b",
-            github: "https://github.com/Gauri1804/React",
-            demo: "https://gauri1804.github.io/React/"
-        },
+        // {
+        //     p_name: "Tourism Website for Uttarakhand",
+        //     p__s_description: "This project is related to the Smart India Hackathon ",
+        //     p__l_description: "During my BCA, I developed a Smart India Hackathon project on Uttarakhand tourism, using AI, GPS, and React.js to enhance travel with smart itineraries, emergency alerts, and eco-tourism support. 🚀",
+        //     p_img: "https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2Fpro1.png?alt=media&token=99d50602-3973-4189-b4b1-ff6b6b527f37",
+        //     github: "https://github.com/Gauri1804/React",
+        //     demo: "https://gauri1804.github.io/React/"
+        // },
+        // {
+        //     p_name: "Student Portal For Collage",
+        //     p__s_description: "Student Portal for College – A Winter Live Project.",
+        //     p__l_description: "A Student Portal for college providing notes, previous year question papers, announcements, and resources, ensuring easy access to academic materials and essential information in one place. 📚✨",
+        //     p_img: "https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2Fpro2.png?alt=media&token=1e07c2e2-b8a0-4345-a28d-3ea5422edc1b",
+        //     github: "https://github.com/Gauri1804/React",
+        //     demo: "https://gauri1804.github.io/React/"
+        // },
 
 
     ]
@@ -72,14 +82,16 @@ function Project({ blur }) {
                                     <div className={styles.btnDiv}>
 
 
-                                        <div className={styles.buttonView}>
+                                        <div onClick={() => window.open(data.github, "_blank")} className={styles.buttonView}>
                                             <FaGithubSquare size={15} />
                                             <a > View Code</a>
                                         </div>
 
-                                        <div className={styles.buttonCode}>
+
+
+                                        <div onClick={() => window.open(data.demo, "_blank")} className={styles.buttonCode}>
                                             <GoProjectSymlink size={15} />
-                                            <a >View Project</a>
+                                            <a>View Project</a>
                                         </div>
                                     </div>
                                 </div>

@@ -90,7 +90,7 @@ const Header = ({ showMenu, handleMenuToggle }) => {
 
             <nav style={theme === "light" ? {
                 color: colors.color,
-                backgroundColor: colors.backgroundSemi
+                backgroundColor: colors.background
             } : {
                 color: colors.colorDark,
                 backgroundColor: colors.backgroundHeader
