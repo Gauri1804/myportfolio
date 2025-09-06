@@ -4,7 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-scroll";
 import { ThemeContext } from "../../App";
 import { colors } from "../../constraint/colors";
-function Home({ blur }) {
+const Home = ({ blur }) => {
   //create consumer
   const { theme } = useContext(ThemeContext);
   const RESUME_URL =
@@ -79,6 +79,6 @@ function Home({ blur }) {
       </section>
     </div>
   );
-}
+};
 
 export default Home;
