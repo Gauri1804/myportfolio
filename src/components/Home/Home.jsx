@@ -7,7 +7,19 @@ import { colors } from "../../constraint/colors";
 function Home({ blur }) {
   //create consumer
   const { theme } = useContext(ThemeContext);
+  const RESUME_URL =
+    "https://myportfolio-gauri1804s-projects.vercel.app/file_resume.pdf";
 
+  const downloadResumeFile = (url) => {
+    // i used this loc to split or get only file path which is after / (but it would be last one if there is multiple / so it will consider last one)
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
   return (
     <div
       id="home"
@@ -26,7 +38,7 @@ function Home({ blur }) {
     >
       <img
         className={styles.img}
-        src="https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Images%2Flogoport.png?alt=media&token=fa7057bd-4bfd-4b26-b528-d507de34db43"
+        src="https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2FIMG_9155.PNG?alt=media&token=6df19781-f7d0-4352-ae98-5abd766230af"
       />
 
       <section className={styles.subContainer}>
@@ -48,7 +60,12 @@ function Home({ blur }) {
           environment.
         </p>
         <div className={styles.btnContainer}>
-          <button className={styles.getButton}>Get Resume</button>
+          <button
+            onClick={() => downloadResumeFile(RESUME_URL)}
+            className={styles.getButton}
+          >
+            Get Resume
+          </button>
           <Link
             to="contact"
             offset={-80}

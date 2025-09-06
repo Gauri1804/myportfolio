@@ -266,25 +266,28 @@ function Contact({ blur }) {
           <div className={styles.contactME}>
             <h4>Contact with Me</h4>
             <div className={styles.contactIcons}>
-              <a>
+              <a target="_blank" href="https://github.com/Gauri1804">
                 <FaGithub
                   size={20}
                   className={` ${styles.commonIcon} ${styles.githubIcon} `}
                 />
               </a>
-              <a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/gaurav-singh1804?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app "
+              >
                 <FaLinkedin
                   size={20}
                   className={` ${styles.commonIcon} ${styles.linkedinIcon} `}
                 />
               </a>
-              <a>
+              <a onClick={() => alert("coming soon...")}>
                 <FaTwitterSquare
                   size={20}
                   className={` ${styles.commonIcon} ${styles.twitterIcon} `}
                 />
               </a>
-              <a>
+              <a target="_blank" href="https://wa.me/+916397846708">
                 <FaWhatsappSquare
                   size={20}
                   className={` ${styles.commonIcon} ${styles.whatsappIcon} `}
