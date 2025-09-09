@@ -27,7 +27,7 @@ function Project({ blur }) {
 
       p_img:
         "https://firebasestorage.googleapis.com/v0/b/student-portal-baeb9.appspot.com/o/Portfoilo%2FScreenshot%202025-08-24%20161735.png?alt=media&token=d4402547-819b-4a4d-a7cf-6fe727bc6f62",
-      github: "https://github.com/Gauri1804/myportfolio",
+      github: "https://github.com/Gauri1804/Personal-Blog-Website",
       demo: "https://fbhk-ee131.web.app/",
     },
     // {
